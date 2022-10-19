@@ -1,0 +1,31 @@
+{
+  "_cts": {
+    "header": {
+      "headerMenus": {
+        "menu": {
+          "config": {
+            "patternType": "PARAGRAPH",
+            "blocks": 1
+          }
+        }
+      }
+    },
+    "footer": {
+      "footerText": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    },
+    "page": {},
+    "copyright": {}
+  },
+  "slices": {
+    "Heropanel": {
+      "default": {
+        "primary": {}
+      }
+    }
+  }
+}

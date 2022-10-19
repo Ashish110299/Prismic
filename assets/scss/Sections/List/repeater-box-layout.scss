@@ -1,0 +1,138 @@
+@import '~/assets/scss/sass-loader';
+
+.repeater-box {
+  position: relative;
+
+  &-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 6rem;
+
+    &.container {
+      padding: 0;
+    }
+  }
+
+  &-thumb {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+
+    &-container {
+      height: 300px;
+
+      @media(max-width: $screen-md) {
+        height: auto;
+      }
+    }
+  }
+  
+  &-details {
+    background: var(--primary-color);
+    height: calc(100% - 300px);
+    color: white;
+    padding: 3rem 2.5rem 7rem;
+    
+    @media(max-width: $screen-md) {
+      height: auto;
+    }
+  }
+
+  &-title {
+    font-family: var(--secondary-font);
+    margin-bottom: 1.3rem;
+    line-height: 29px;
+    font-weight: 400;
+    font-size: 22px;
+  }
+
+  &-description * {
+    font-family: var(--primary-font);
+    line-height: 22px;
+    font-size: 15px;
+  }
+
+  &:nth-child(odd) {
+    .repeater-box-details {
+      background: var(--secondary-color);
+    }
+  }
+
+  &-link {
+    border: 2px solid white;
+    display: block;
+    padding: .5rem 1.7rem .5rem 1rem;
+    background: white;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 13px;
+    transition: .5s;
+    text-align: center;
+    width: 50%;
+
+    &:not(:last-child) {
+      margin-right: 7px;
+    }
+
+    &:hover {
+      color: white;
+      background: transparent;
+    }
+
+    &.sign-up {
+      background: var(--secondary-color);
+      border: 2px solid var(--secondary-color);
+      color: white;
+
+      &:hover {
+        color: var(--secondary-color);
+        background: transparent;
+      }
+    }
+
+    &-container {
+      display: flex;
+      position: absolute;
+      bottom: 2.5rem;
+      width: 80%;
+    }
+  }
+
+  @media(max-width: $screen-xl) {
+    &-details {
+      padding: 2rem 1.5rem 6rem;
+    }
+
+    &-link {
+      padding: 0.5rem;
+      
+      &-container {
+        bottom: 1.5rem;
+      }
+    }
+    
+  }
+  
+  @media(max-width: $screen-lg) {
+    &-link {
+      font-size: 10px;
+      padding: 6px 2px;
+    }
+  }
+
+  @media(max-width: $screen-md) {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    &-link {
+      font-size: 12px;
+    }
+
+    &-container {
+      grid-template-columns: repeat(1, 1fr);
+      margin: 1rem 0;
+    }
+  }
+}

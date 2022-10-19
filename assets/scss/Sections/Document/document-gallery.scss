@@ -1,0 +1,53 @@
+@import '~/assets/scss/sass-loader.scss';
+
+.documentGallery {
+  $el: '.documentGallery';
+
+  &__container {
+    padding-left: 5rem; 
+    max-width: $container;
+    margin-left: 0;
+  }
+
+  &__section {
+    margin-bottom: 2rem;
+
+    &__title {
+      font-size: $fs-xxl - 2px;
+      color: var(--primary-color);
+      font-weight: 600;
+
+      &__container {
+        @include d-flex(row, center);
+        gap: 1rem;
+      }
+
+      &__icon {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+
+  &__grid {
+    @include grid-columns(3, 1fr);
+    gap: 2.5rem;
+  }
+
+  figcaption {
+    font-family: var(--secondary-color);
+    color: var(--secondary-color);
+    font-size: $fs-lg;
+    margin-top: 10px;
+  }
+
+  @media(max-width: $screen-sm) {  
+    &__container {
+      padding-left: 0;
+    }
+
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}

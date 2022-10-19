@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "slicemachine": "start-slicemachine"
+  },
+  "devDependencies": {
+    "@nuxtjs/prismic": "^1.4.2",
+    "@prismicio/slice-simulator-vue3": "^0.1.1",
+    "nuxt": "^3.0.0-rc.11",
+    "sass": "^1.54.9",
+    "sass-loader": "^12.6.0",
+    "slice-machine-ui": "^0.5.1"
+  },
+  "dependencies": {
+    "@nuxt/webpack-builder": "^3.0.0-rc.11",
+    "@prismicio/slice-simulator-vue": "^0.2.1",
+    "@splidejs/vue-splide": "^0.6.3",
+    "vanilla-lazyload": "^17.8.1",
+    "vue-slicezone": "^0.1.6"
+  }
+}

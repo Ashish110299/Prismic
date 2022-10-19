@@ -1,0 +1,123 @@
+@import '~/assets/scss/sass-loader';
+  .TM {
+    display: flex;
+    flex-direction: column;
+    
+    &__title {
+      color: var(--primary-color);
+      font-size: $fs-xxl;
+      font-weight: 400;
+      padding-bottom: 1rem;
+
+      @include mobile {
+        padding-bottom: .5rem !important;
+      }
+
+      @include allMobile{
+        padding-bottom: .5rem !important;
+      }
+    }
+
+    &__descr {
+      margin-bottom: 0rem !important;
+    }
+
+    &__testimonial {
+      margin-right: 1rem;
+      text-align: center;
+      border-radius: 20px;
+      padding: 2rem 2rem 1.5rem 2rem; 
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1), 0px 5px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      margin-top: .5rem;
+
+      @include mobile {
+        padding: 1rem;
+      }
+      
+      &__container {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+      }
+
+      &--content {
+        overflow: hidden;
+        // min-height: 100px;
+
+        p {
+          line-height: 1.5rem;
+          margin-bottom: 0rem;
+        }
+      }
+
+      &--title {
+        font-size: $fs-xxl;
+      }
+
+      &--position {
+        color: var(--primary-color);
+        font-size: $fs-xl;
+        font-weight: 600;
+      }
+    }
+
+    .hooper {
+      height:auto !important;
+
+      &-slide {
+        width: 99.5% !important;
+      }
+
+      &-track {
+        width: 100% !important;
+      }
+
+      &-navigation {
+        svg {
+          height: 40px;
+          width: 40px;
+          
+          @include mobile {
+            display: none;
+          }
+        }
+        path:not([fill="none"]) {
+          fill: var(--primary-color) ; 
+        }
+      }
+
+      &-pagination {
+        bottom: -1rem !important;
+      }
+
+      &-indicators {
+        gap: 1rem;
+      }
+
+      &-indicator {
+        margin-right: .5rem;
+        height: 10px !important;
+        width: 10px !important;
+        border-radius: 50% !important;
+        border: 1px solid var(--primary-color);
+
+        &:hover {
+          background: var(--primary-color);
+        }
+
+        &.is-active {
+          background: var(--primary-color);
+        }
+      }
+    }
+  }
+
+  .sidebar-content {
+    overflow: hidden;
+
+    @include mobileLandscape {
+      max-width: 100%;
+      margin-left: 0rem;
+    }
+  }

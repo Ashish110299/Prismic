@@ -1,0 +1,229 @@
+@import '~/assets/scss/sass-loader';
+
+.infoBox {
+  $el: '.infoBox';
+  position: relative;
+
+  &__container {
+    @include grid-columns(1, 1fr, start, start, 60px);
+
+    &--column-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    &--column-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &--column-4 {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+  }
+
+  &__section {
+    $subtitle: &;
+    @include d-flex(row, center, space-between);
+    margin-bottom: 20px;
+
+    &__title {
+      color: var(--primary-color);
+      font-size: $fs-xxxl;
+      line-height: $fs-xxxl;
+      font-weight: 600;
+
+      &__container {
+        @include d-flex(row, center, center);
+      }
+
+      &__icon {
+        display: block;
+        width: 85px;
+        height: 85px;
+
+        &__container + #{$el}__section__title {
+          margin-left: 1rem;
+        }
+      }
+    }
+
+    &__subtitle {
+      margin-bottom: 30px;
+      font-size: $fs-lg;
+      color: var(--secondary-color);
+
+      &-over {
+        display: flex;
+        flex-direction: column-reverse;
+
+        #{$subtitle}__subtitle {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+
+  &__title {
+    color: var(--secondary-color);
+    font-size: $fs-xl;
+    line-height: $fs-xl + 10px;
+    margin-bottom: 35px;
+    font-weight: 600;
+    display: block;
+  }
+
+  &__content {
+    padding: 20px 30px 80px;
+    
+    &, * {
+      font-family: var(--secondary-font);
+      font-size: $fs-lg;
+      font-weight: 500;
+      line-height: $fs-lg + 10px;
+    }
+
+    &__container {
+      margin-bottom: 50px;
+
+      .custom_posts {
+        #{$el}__button {
+          position: absolute;
+          bottom: 20px;
+          left: 30px;
+        }
+      }
+    } 
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+
+    &__container {
+      display: block;
+      height: 200px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__meta {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: $fs-lg;
+
+    &, * {
+      font-weight: 600;
+    }
+  }
+  
+  &__button {
+    padding: 13px 2.5rem 13px 2.5rem;
+    background-color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 20px;
+    line-height: 1;
+    color: white;
+    display: inline-block;
+    transition: .3s;
+    cursor: pointer;
+    font-family: var(--secondary-font);
+    font-weight: bold;
+    font-size: $fs-md;
+
+    &:hover {
+      background: transparent;
+      color: var(--primary-color);
+    }
+
+    &--no-bg {
+      background: transparent;
+      color: var(--primary-color);
+      padding: 10px 2.5rem 10px 2.5rem;
+
+      &:hover {
+        background-color: var(--primary-color);
+        color: white;
+      }
+    }
+  }
+
+  &__subtitle {
+
+    &-under{
+      display: flex;
+      flex-direction: column-reverse;
+
+      #{$el}__subtitle {
+        margin-bottom: 1rem;
+      }
+
+      #{$el}__title {
+        margin-bottom: 0rem !important;
+      }
+    }
+  }
+
+  &__latestPost {
+    overflow: hidden;
+
+    &-link {
+      padding-bottom: .5rem;
+      cursor: pointer;
+    }
+  }
+
+
+  @include smallDesktop {
+    &__button {
+      padding: 10px 2rem;
+    }
+  }
+
+  @include tablet {    
+    &__container {
+      &--column-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+
+  @media(max-width: $screen-sm) {
+    &__container {
+      grid-template-columns: 1fr;
+    }
+
+    &__section {
+      margin-bottom: 20px;
+
+      &__title {
+        font-size: 32px;
+        line-height: 32px;
+
+        &__icon {
+          width: 60px;
+          height: 60px;
+        }
+      }
+    }
+
+    &__image__container {
+      margin-bottom: 10px;
+    }
+
+    &__title {
+      font-size: $fs-xl + 2px;
+      line-height: $fs-xl + 12px;
+      margin-bottom: 25px;
+    }
+
+    &__button {
+      font-size: $fs-md;
+    }
+
+    &__meta {
+      font-size: $fs-md;
+      margin-bottom: 15px;
+    }
+  }
+}

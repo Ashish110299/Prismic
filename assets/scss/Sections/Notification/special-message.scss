@@ -1,0 +1,26 @@
+@import '~/assets/scss/sass-loader.scss';
+
+.notification {
+
+  &__special_message {
+    @include d-flex(row, center, center);
+    padding: 15px 0;
+    position: absolute;
+    width: 100%;
+    top: 0;
+
+    img {
+      margin: 0 10px;
+    }
+
+    &, * {
+      font-family: var(--secondary-font);
+      font-weight: bold;
+      font-size: $fs-lg;
+
+      @media(max-width: $screen-sm) {
+        font-size: $fs-md;
+      }
+    }
+  }
+}

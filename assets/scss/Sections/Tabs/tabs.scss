@@ -1,0 +1,44 @@
+@import '~/assets/scss/sass-loader';
+
+.pt {
+
+  &__tab {
+    font-size: 1.1rem;
+    color: white;
+    padding: .7rem 1.5rem;
+    background: var(--primary-color);
+    opacity: .7;
+    cursor: pointer;
+    transition: .25s;
+
+    &__button {
+
+      &s {
+        @include d-flex;
+        gap: 5px;        
+      }
+    }
+
+    &.active {
+      opacity: 1;
+    }
+
+    &s {
+      @include d-flex;
+      gap: 5px;
+
+      &__content {
+        margin-top: 1rem;
+      }
+    }
+
+    &__data {
+      display: none;
+      padding: 1rem;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+}

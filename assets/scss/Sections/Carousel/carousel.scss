@@ -1,0 +1,93 @@
+@import '~/assets/scss/sass-loader.scss';
+
+.carousels {
+  padding: 3rem;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-between;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @include allMobile {
+    padding: 1rem;
+  }
+
+  &__container {
+    width: 100%;
+    display: grid;
+    place-items: center;
+
+    @include allMobile {
+      text-align: center;
+    }
+  }
+
+  &__title {
+    overflow: hidden; 
+
+    &-mainTitle {
+      font-size: 2rem;
+      color: var(--primary-color);
+      font-weight: 900;
+    }
+
+    &-subTitle {
+      font-size: 1.5rem;
+      color: #fff;
+      font-weight: 900;
+    }
+  }
+
+  &__content {
+    p {
+      font-weight: 300;
+      line-height: 1.3rem;
+      color: #fff;
+    }
+  }
+
+  &__buttonCont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  button {
+    padding: .5rem 1rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-weight: 500;
+    border: none;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+
+    @include allMobile {
+      width: auto;
+    }
+  }
+}
+
+.slick {
+
+  &-prev,&-next {
+
+    &::before {
+      color: var(--primary-color);
+      font-size: 40px;
+      
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+
+  &-prev {
+    left: 0px;
+    z-index: 99;
+  }
+
+  &-next {
+    right: 20px;
+  }
+}

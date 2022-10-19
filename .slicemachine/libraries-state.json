@@ -1,0 +1,101 @@
+{
+  "slices": {
+    "components": {
+      "heropanel": {
+        "library": "slices",
+        "id": "heropanel",
+        "name": "Heropanel",
+        "description": "Heropanel",
+        "model": {
+          "id": "heropanel",
+          "type": "SharedSlice",
+          "name": "Heropanel",
+          "description": "Heropanel",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Heropanel",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "A nice description of your product"
+                  }
+                },
+                "heroImg": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Hero image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Split",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Magna adipisicing tempor do amet officia qui sunt laboris. Quis ipsum consequat fugiat commodo est do ullamco enim mollit ad quis excepteur id cillum aliqua. Incididunt dolor nostrud qui occaecat ad ea ut mollit ipsum laboris cillum esse.",
+                  "spans": []
+                }
+              ],
+              "heroImg": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": null,
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+              }
+            },
+            "slice_type": "heropanel"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "vue"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "D:\\Practice-projects\\Nuxt3-prismic\\practice\\slices\\Heropanel\\default\\preview.png",
+            "width": 1903,
+            "height": 799
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+@import '~/assets/scss/sass-loader.scss';
+
+.floatButton {
+  $el: '.floatButton';
+  @include d-flex-center();
+  background: #0282A6; 
+  width: 60px; 
+  height: 60px;
+  border-radius: 50%;
+  padding: 12px;
+  cursor: pointer;
+  transition: .3s;
+
+  &:hover {
+    transform: scale(1.11);
+
+    #{$el}__tooltip {
+      transform: scale(1);
+    }
+  }
+
+  &--top {
+    --bg: #FECE83;
+    background: var(--bg);
+  }
+
+  &--close {
+    background: #C42F67;
+  }
+
+  &__container {
+    z-index: 9999999;
+    position: fixed;
+    display: grid;
+    bottom: 20px;
+    right: 20px;
+    gap: 1rem;
+  }
+
+  &__icon {
+    max-width: 100%;
+  }
+
+  &__tooltip {
+    position: absolute;
+    right: 70px;
+    width: max-content;
+    background: rgba($color: #000000, $alpha: .75);
+    padding: 8px 16px;
+    border-radius: 5px;
+    color: white;
+    transform: scale(0);
+    transition: .2s;
+    font-size: $fs-sm ;
+
+    &::after {
+      content: " ";
+      position: absolute;
+      top: 40%; /* At the bottom of the tooltip */
+      right: -15px;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: black transparent transparent transparent;
+      transform: rotate(-90deg) translateY(-50%);
+    }
+  }
+
+  @include mobile($bp-max-md) {
+    width: 45px;
+    height: 45px;
+    padding: 10px;
+
+    &__container {
+      right: 10px;
+      bottom: 10px;
+    }
+  }
+}

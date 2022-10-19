@@ -1,0 +1,40 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "header",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "headerLogo": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68"
+    },
+    "headerMenus": [
+      {
+        "menu": [
+          {
+            "type": "paragraph",
+            "text": "Proident exercitation quis et sit ex dolore id Lorem mollit in est fugiat laboris labore. Commodo esse mollit nisi aliqua velit. Dolore id officia et cillum dolore deserunt pariatur ex.",
+            "spans": []
+          }
+        ],
+        "menuLink": {
+          "link_type": "Web",
+          "url": "http://google.com"
+        },
+        "highlighted": false
+      }
+    ]
+  }
+}

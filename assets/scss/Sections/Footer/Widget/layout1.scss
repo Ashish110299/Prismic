@@ -1,0 +1,7 @@
+@import '~/assets/scss/Sections/Footer/Widget/index';
+
+.layout-1-container {
+	.container {
+    @include grid-columns(4, 1fr, start, start, 40px 10px);
+  }
+}

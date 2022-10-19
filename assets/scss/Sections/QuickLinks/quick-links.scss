@@ -1,0 +1,189 @@
+@import '~/assets/scss/sass-loader';
+
+.quickLinks {
+  padding-bottom: 5rem;
+  
+  &__accordian {
+    display: none;
+  }
+
+  &__iconImg {
+    background-color: $text-color;
+    border-radius: 50%;
+    max-height: 85px;
+    max-width: 85px;
+
+    img {
+      height: 85px;
+      width: 85px;  
+    }
+  }
+
+  &__heading {
+    font-size: 26px;
+    font-family: var(--primary-font);
+    color: $primary-color ;      
+    @include d-flex(row, center, flex-start);
+
+    h1 {
+      margin-left: 1rem;
+      color: var(--primary-color);
+      font-weight: 600;
+      font-size: $fs-xxxl;
+    }
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 1.5rem;
+    margin-top: .5rem;
+  }
+
+  &__column {
+    @include d-flex(column);
+    font-family: var(--secondary-font);
+    text-align: center;
+    gap: 20px;
+
+    &__title {
+      font-size: 30px;
+      font-family: inherit;
+      gap: 1rem;
+      color: #68398e;
+      margin-bottom: 0.2rem;
+      font-weight: bold;
+      width: 100%;
+    }
+
+    a {
+      display: block;
+      font-size: 18px;
+      font-weight: 500;
+      width: 100%;
+      white-space: inherit;
+      line-height: 22px;
+    }
+  }
+
+  @include smallDesktop { 
+    &__row{
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;    
+    }
+  }
+
+  @include tablet { 
+    a.infoBox__button {
+      font-size: $fs-md;  
+      padding: 11px 1.7rem;
+    }
+
+    &__column {
+      gap: 15px;
+    }
+  }
+
+  @include mobile {
+    &__accordian {
+      @include d-flex(row, center, space-between);
+    }  
+  }
+  
+}
+
+// mobile devices 
+@media screen and (max-width: 576px) {
+  .quickLinks {
+    
+    &__accordian {
+      @include d-flex(row, center, space-between);
+      padding: 0 1rem;
+      background-color: var(--primary-color);
+      color: white;
+
+      .symbol {
+        font-size: 2.5rem;
+        border: 0;
+        background: transparent;
+        color: white;
+        cursor: pointer;
+        transition: transform .2s ease;
+      }
+
+      .clickedButton {
+        transform: rotate(45deg) translateY(-5px);
+      }
+    }
+
+    .container {
+      transition: all .3s ease;
+      height: auto;
+      padding-top: .5rem;
+    }
+
+    .showHide {
+      height: 0;
+      overflow: hidden;
+    }
+
+    &__iconImg {
+      max-height: 40px;
+      max-width: 40px;
+
+      img {
+        height: 40px;
+        width: 40px;        
+      }
+    }
+
+    &__heading {
+      font-size: 26px;
+      font-family: 'Bree Serif', serif;
+      color: $primary-color ;
+      @include d-flex(row, center, flex-start);
+
+      h1 {
+        margin-left: 1rem;
+        color: var(--primary-color);
+        font-weight: 400;
+        font-size: 32px;
+      }
+    }
+
+    &__row {
+      display: flex;
+      padding-top: 1.5rem;
+      margin-top: .5rem;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    &__column {
+      @include d-flex(column);
+      font-family: 'Lato', sans-serif;
+      text-align: center;
+      gap: 20px;
+
+      &__title {
+        font-size: 22px;
+        font-family: inherit;
+        gap: 1rem;
+        color: #68398e;
+        margin-bottom: -0.2rem;
+        font-weight: bold;
+        width: 100%;
+      }
+
+      a {
+        display: block;
+        font-size: 18px;
+        font-weight: 500;
+        white-space: nowrap;
+        width: 100%;
+      }
+    }
+  }
+}

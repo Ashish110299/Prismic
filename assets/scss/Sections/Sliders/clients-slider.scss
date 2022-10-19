@@ -1,0 +1,19 @@
+@import '~/assets/scss/sass-loader';
+
+.client {
+  width: 180px;
+  height: 100px;
+  margin-bottom: 80px;
+  padding: 10px;
+  @include d-flex-center();
+
+  &-container {
+    @include d-flex(row, flex-start, center);
+  }
+  
+  @media(max-width: $screen-sm) {  
+    &-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "footer",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "footerImg": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db"
+    },
+    "footerText": [
+      {
+        "type": "paragraph",
+        "text": "Laboris dolore do cupidatat aute voluptate. Amet cupidatat veniam anim mollit veniam occaecat. Nulla ullamco duis excepteur aute duis laboris proident et anim elit elit culpa ad nostrud ut.",
+        "spans": []
+      }
+    ]
+  }
+}

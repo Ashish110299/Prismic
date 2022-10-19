@@ -1,0 +1,95 @@
+@import '~/assets/scss/sass-loader';
+
+.project-testimonial {
+  padding-top: 60px;
+  padding-bottom: 50px;
+}
+
+.testimonial {
+  position: relative;
+
+  &.is-active {
+    .testimonial-prev-layer, 
+    .testimonial-front-layer, 
+    .testimonial-author {
+      opacity: 1;
+    }
+  }
+
+  &-prev-layer {
+    position: absolute;
+    z-index: 9;
+    max-height: 90%;
+    overflow: hidden;
+    width: 40%;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 10px #ededed;
+    opacity: 0;
+    transition: 1s;
+    transition-delay: 1s;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &-front-layer {
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    left: 45%;
+    top: 50%;
+    z-index: 10;
+    box-shadow: 0 0 10px #ededed;
+    opacity: 0;
+    transition: 1s;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &-author {
+    transform: translateY(-50%);
+    position: relative;
+    margin-left: auto;
+    width: 35%;
+    top: 50%;
+    opacity: 0;
+    transition: 1s;
+    transition-delay: 1.5s;
+    padding: 32px 20px;
+    background: #f2f0f0;
+    border: 2px solid #fefefe;
+    border-left: none;
+    box-shadow: 0 0 2px #f1f1f1;
+  }
+  
+  &-layer {
+    @include d-flex-center(column);     
+    height: 100%;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &-review {
+    text-align: center;
+  }
+
+  &-user {
+    @include d-flex(row, center, flex-start);
+    margin-top: 1rem;
+
+    &-image {
+      margin-right: 15px;
+      border-radius: 50%;
+      overflow: hidden;
+
+      img {
+        display: block;
+      }
+    }
+  }
+}

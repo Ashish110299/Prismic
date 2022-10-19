@@ -1,0 +1,35 @@
+@import '~/assets/scss/Sections/Testimonials/index.scss';
+
+.testimonial-section .section-container .content-container {
+  .section-title {
+    font-family: 'Brown';
+    font-weight: bold;
+  }
+}
+
+.testimonial {
+  &-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &-content {
+    margin-bottom: 2rem;
+    font-family: 'Brown';
+    font-weight: 100;
+  }
+
+  &-client {
+    font-family: 'Montserrat';
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: .5rem;
+    letter-spacing: 1px;
+  }
+
+  &-designation {
+    font-family: 'Brown';
+    font-weight: 100;
+  }
+}

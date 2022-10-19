@@ -1,0 +1,19 @@
+@import "~/assets/scss/Sections/HeroSection/index.scss";
+
+
+
+.section-container {
+  position: relative;
+  z-index: 1;
+  @include d-flex-center(column);
+
+  .content-container .image-container {
+    text-align: center;
+    margin: auto;
+    max-width: var(--max-width);
+
+    img {
+      max-width: 100%;
+    }
+  }
+}

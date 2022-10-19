@@ -1,0 +1,98 @@
+@import '~/assets/scss/sass-loader';
+
+.audio {
+  $el: '.audio';
+
+  &__section {
+    margin-bottom: 1rem;
+    
+    &__container {
+      max-width: $container;
+    }
+    
+    &__title {
+      font-size: $fs-xxl + 2px;
+      line-height: $fs-xxl + 16px;
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-bottom: .7rem;
+    }
+
+    &__content {
+      font-size: $fs-xl;
+      line-height: $fs-xl + 10px;
+    }
+  }
+
+  &__container {
+    margin-bottom: 2rem;
+  }
+
+  &__box {
+    margin-top: 2rem;
+
+    &__title {
+      @include d-flex-center;
+      justify-content: flex-start;
+      font-size: $fs-xxl;
+      line-height: $fs-xxl + 10px;
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-bottom: .5rem;
+      position: relative;
+
+      &__icon {
+        width: 65px;
+        height: 65px;
+        margin-right: 10px;
+      }
+    }
+
+    &__content, &__content * {
+      font-size: $fs-xl;
+      line-height: $fs-xl + 10px;
+    }
+  }
+
+  &__player {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  @media(max-width: $screen-sm) {
+    
+    &__section {
+      margin-bottom: 1rem;
+
+      &__container {
+        max-width: $container;
+      }
+
+      &__title {
+        font-size: $fs-xl + 4px;
+        line-height: $fs-xl + 14px;
+      }
+
+      &__content {
+        font-size: $fs-lg;
+        line-height: $fs-lg + 7px;
+      }
+    }
+
+    &__box__title {
+      font-size: $fs-xl;
+      line-height: $fs-xl + 10px;
+
+      &__icon {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+
+    &__box__content, &__box__content * {
+      font-size: $fs-lg;
+      line-height: $fs-lg + 10px;
+    }
+  }
+}

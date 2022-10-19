@@ -1,0 +1,292 @@
+@import "~/assets/scss/sass-loader";
+.IG {
+  &__title {
+    font-size: $fs-lg;
+    color: var(--primary-color);
+    font-size: $fs-xxl;
+    padding-bottom: 0.5rem;
+
+    @include mobile {
+      padding-bottom: 0rem;
+    }
+  }
+
+  &__carosels {
+    position: relative;
+  }
+
+  &__lightBox {
+    z-index: 999999999999;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.9);
+
+    &-close {
+      position: absolute;
+      font-size: 40px;
+      right: 2rem;
+      top: 1rem;
+      color: #fff;
+      cursor: pointer;
+      @include mobile {
+        right: 2rem;
+      }
+    }
+
+    &-image {
+      z-index: 99999;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: auto;
+      height: auto;
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    &-prev,
+    &-next {
+      color: #fff;
+    }
+  }
+
+  &__content {
+    font-size: $fs-xl;
+    @include mobile {
+      font-size: $fs-sm;
+    }
+  }
+
+  &__gallery {
+    overflow: hidden;
+
+    &__images {
+      object-fit: cover;
+      overflow: hidden;
+      vertical-align: middle;
+
+      &:hover {
+        box-shadow: 0 4px 5px 2px rgba(0, 0, 0, 0.15);
+      }
+
+      &--grid {
+        height: 100%;
+        width: 100%;
+      }
+
+      &--mosaic {
+        flex: auto;
+        height: 25vw;
+        margin: 0rem 0.5rem 0.5rem 0rem;
+        max-height: 200px;
+
+        @include mobile {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      &--cursor {
+        cursor: pointer;
+      }
+    }
+
+    &--grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+
+      &--column-4 {
+        grid-template-columns: repeat(4, 1fr);
+
+        @include smallDesktop {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 0.5rem;
+        }
+
+        @include allMobile {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include mobile {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+
+      &--column-3 {
+        grid-template-columns: repeat(3, 1fr);
+
+        @include smallDesktop {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 0.5rem;
+        }
+
+        @include allMobile {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include mobile {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+
+      &--column-2 {
+        grid-template-columns: repeat(2, 1fr);
+
+        @include smallDesktop {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.5rem;
+        }
+
+        @include allMobile {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include mobile {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+    }
+    &--mosaic {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__carosel {
+    $cEl: &;
+    position: relative;
+
+    &s {
+      max-width: calc(100vw - 550px);
+      margin: 0 auto;
+
+      @include smallDesktop($bp-md-ex - 1px) {
+        max-width: calc(100vw - 350px);
+      }
+
+      @include mobileLandscape {
+        max-width: calc(100vw - 150px);
+      }
+
+      @include mobile {
+        max-width: calc(100vw - 50px);
+      }
+    }
+
+    &:focus {
+      outline: 0;
+    }
+
+    &__full {
+      height: 700px;
+
+      @include smallDesktop {
+        height: 400px;
+        max-width: 100%;
+      }
+
+      @include mobile {
+        height: 300px;
+      }
+    }
+
+    &__thumbs {
+      height: auto;
+      min-height: 100px;
+
+      @include mobile {
+        height: 100px;
+      }
+
+      #{$cEl}__images {
+        padding: 5px 5px 0px 0px;
+        display: block;
+        cursor: pointer;
+      }
+    }
+
+    &__images,&__image-container {
+      height: 100%;
+      width: 100%;
+    }
+
+    .hooper {
+      &-slide {
+        min-width: 100px;
+      }
+
+      &-navigation {
+        svg {
+          width: 50px;
+          height: 50px;
+
+          path:not([fill="none"]) {
+            fill: white;
+
+            &:hover {
+              fill: var(--primary-color);
+            }
+          }
+        }
+      }
+    }
+
+    &--prevButton,
+    &--nextButton {
+      font-size: 80px;
+      font-weight: 300;
+      background-color: transparent;
+      border: none;
+      position: absolute;
+      top: 45%;
+      transform: translateY(-50%);
+      color: #fff;
+      z-index: 999999;
+      cursor: pointer;
+
+      @media (min-width: $bp-lg) and (max-width: $bp-md-ex) {
+        top: 40%;
+      }
+
+      @include tablet {
+        font-size: 60px;
+        top: 35%;
+      }
+    }
+
+    &--prevButton {
+      left: 1rem;
+    }
+
+    &--nextButton {
+      right: 1rem;
+    }
+
+    &__caption {
+      position: absolute;
+      bottom: 15px;
+      padding: 0.3rem 0rem;
+      width: 100%;
+      text-align: center;
+      color: #fff;
+      font-weight: 300;
+      font-size: $fs-xxl;
+      background-color: rgba($color: #000, $alpha: 0.4);
+      z-index: 99999999;
+
+      @include smallDesktop {
+        font-size: $fs-xl;
+      }
+
+      @include mobile {
+        font-size: $fs-sm;
+      }
+    }
+  }
+}

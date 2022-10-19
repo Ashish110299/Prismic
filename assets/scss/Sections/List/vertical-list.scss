@@ -1,0 +1,59 @@
+@import '~/assets/scss/sass-loader';
+
+.vertical-list-container {
+
+  &.box-shaddow {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, .4);
+  }
+  
+  .section-container {    
+    .heading-container {
+      text-align: center;
+      margin-bottom: 60px;
+
+      .subtitle {
+        text-align: center;
+        text-transform: uppercase
+      }
+
+      .title {
+        text-align: center;
+        margin-bottom: 16px;
+      }
+
+      .content {
+        margin-bottom: 40px;
+      }
+    }
+
+    .content-container {
+      background-color: var(--primary-color);
+
+      .single-content-container {
+        @include grid-columns(2, 1fr, center, center, 0);
+        
+        &:nth-child(even) {
+          .icon-container {
+            order: 2;
+          }
+        }
+
+        .icon-container {
+          height: 600px;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-position: center;
+          }
+        }
+
+
+        .content-details {
+          width: 70%;
+          margin: auto;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,589 @@
+@import '~/assets/scss/sass-loader';
+
+//  ===== Include fonts
+// Montserrat
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  src: url("/fonts/Montserrat/Montserrat-Bold.ttf");
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 500;
+  src: url("/fonts/Montserrat/Montserrat-SemiBold.ttf");
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 300;
+  src: url("/fonts/Montserrat/Montserrat-Light.ttf");
+}
+
+// Grava Display
+@font-face {
+  font-family: 'Grava Display';
+  font-weight: 900;
+  src: url("/fonts/grava/Grava Display Bold.otf");
+}
+
+// Lulo Clean 
+@font-face {
+  font-family: 'Lulo Clean';
+  font-weight: bold;
+  src: url("/fonts/Lulo-Clean.ttf");
+}
+@font-face {
+  font-family: 'Brown';
+  src: url("/fonts/Brown/Brown.ttf");
+}
+@font-face {
+  font-family: 'Brown';
+  font-weight: 100;
+  src: url("/fonts/Brown/brown-light.ttf");
+}
+
+// //Font Variables
+:root {
+  --primary-font: 'Brown', sans-serif;
+  --primary-bold-font: 'Brown', sans-serif;
+  --secondary-font: 'Montserrat', sans-serif;
+  --secondary-bold-font: 'Montserrat', sans-serif;
+
+  --primary-color: #0d3b42;
+  --secondary-color: #F3C142;
+}
+
+* {
+  font-family: var(--primary-font);
+}
+
+
+// Page Loader
+.page-loader-container .page-loader {
+  background: url(/hfof-loader.svg) !important;
+  animation: loading 1s infinite;
+}
+
+@keyframes loading {
+  0% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 0.75;
+  }
+  66% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+//  ===== Buttons
+.button-container a.custom-button, .transparent-white-button {
+  border: 2px solid white;
+  color: white;
+  background: transparent;
+  padding: 8px 16px;
+  font-family: 'Lulo Clean';
+  font-size: 10px;
+  display: inline-block;  
+  position: relative;
+  z-index: 1;
+  transition: .7s;
+
+  a::after {
+    content: none !important;
+  }
+
+  &.primary-color {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    background: $primary-color;
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: .7s;
+  }
+
+  &:hover {
+    border-color: $primary-color;
+
+    &::after {
+      width: 100%;
+    }
+  }
+
+  &.md {
+    padding: 12px 36px;
+    font-size: 12px;
+  }
+
+  &.lg {
+    padding: 14px 42px;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 700;
+
+    @media(max-width: 576px) {
+      padding: 12px 36px;
+      font-size: 10px;
+
+    }
+  }
+}
+
+// Custom CSS
+.sidebar-content > div:not(.component-layout.page-layout) { display: none !important }
+
+.header-container .menubar-container div.logo-container {
+  max-width: 120px;
+}
+
+.menubar-container .menubar .menu {
+  align-items: center;
+
+  &-item {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    a {
+      font-family: var(--secondary-font);
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      font-size: 16px;
+      padding-left: 0;
+      padding-right: 0;
+      opacity: 0.5;
+      transition: 0.5s;
+
+      &.nuxt-link-exact-active,
+      &:hover {
+        opacity: 1;
+      }
+
+      &::after {
+        content: none !important;
+      }
+    }
+  }
+
+  .transparent-white-button {
+    & > a {
+      padding: 3px 10px;
+
+      &:hover::after {
+        width: 0;
+      }
+    }
+  } 
+}
+
+// Hero Section
+#hero-section {
+  .section-title {
+    font-family: 'Grava Display';
+    font-size: 7rem;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+    text-align: center;
+  } 
+  .section-content {
+    font-family: var(--primary-font);
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: 36px;
+    line-height: 44px;
+    text-align: center;
+    color: #fff !important;
+  }
+} 
+
+#right-insights {
+  .section-container {
+    position: relative;
+  }
+
+  .image-container {
+    max-width: 85%;
+    margin-left: auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .content-container {
+    position: absolute;
+    top: 90px;
+    width: 50%;
+    height: max-content;
+  }
+
+  .section-title {
+    font-family: var(--primary-font);
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: 58px;
+    line-height: 120%;
+    color: var(--primary-color);
+  }
+}
+
+.service-container .service .content {
+  font-family: var(--primary-font);
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 36px;
+}
+
+#about-us {
+  position: relative;
+  z-index: 9;
+
+  .section-container {
+    min-height: auto;
+    height: 700px;
+    max-height: 600px;
+  }
+
+  .image-container {
+    text-align: right;
+
+    img {
+      width: 70%;
+    }
+  } 
+
+  .section-subtitle {
+    font-family: var(--secondary-font);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-family: var(--primary-font);
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 100%;
+  }
+
+  .section-description, .section-description * {
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: 100;
+    font-size: 24px;
+    line-height: 140%;
+  }
+}
+
+#getting-through-this .section-container {
+  min-height: 600px;
+  display: flex;
+
+  .content-container {
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .section-title {
+    font-family: var(--primary-font);
+    font-size: 68px;
+    line-height: 130%;
+    color: #fff;
+    font-weight: bolder;
+    letter-spacing: 2px;
+  }
+
+  .button-container {
+    margin-top: 80px;
+
+    .custom-button {
+      display: inline-block;
+      font-family: 'Lulo Clean';
+      padding: 16px 24px;
+      font-size: 18px;
+      line-height: 140%;
+      border-radius: 0;
+    }
+  }
+} 
+
+#text-testimonials {
+  color: var(--primary-color);
+
+  .content-container .section-title {
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 58px;
+    line-height: 120%;    
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .section-container {
+    overflow: hidden;
+    display: block;
+  }
+
+  .testimonial {
+    padding-top: 0;
+
+    &-content {
+      font-family: var(--primary-font);
+      font-style: normal;
+      font-weight: 300;
+      font-size: 32px;
+      line-height: 120%;
+    }
+
+    &-client {
+      font-family: var(--secondary-font);
+      font-style: normal;
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 110%;
+    }
+
+    &-designation {
+      font-family: var(--primary-font);
+      font-style: normal;
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 110%;
+    }
+  }
+}
+
+#calendly {
+  background: var(--primary-color);
+}
+
+.calenderly-container {
+  text-align: center;
+
+  .content-container {
+    padding: 42px 0 0;
+    
+    .section-title {
+      color: #fff;
+      font-size: 62px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .section-subtitle {
+      color: #fff;
+      font-size: 32px;
+      font-weight: 200;
+    }
+  }
+}
+
+.get_in_touch_widget {
+  .content-container {
+    
+    .section-title {
+      color: var(--primary-color);
+    }
+    .section-subtitle {
+      color: var(--primary-color);
+    }
+  }
+}
+
+// Case Studies
+#CaseStudies .tabs .container {
+  max-width: 100%;
+} 
+
+footer.footer-container .layout-1-container.widget-container {
+  background: #7D7854;
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    text-align: center;
+    color: white;
+
+    .logo-section { 
+      max-width: 300px;
+      margin: 0 auto;
+    }
+  
+    .menu {
+      display: none;
+    }
+  }
+
+  .logo-section {
+    text-align: center;
+    font-size: 18px;
+
+    img {
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 50px;
+      max-width: 200px !important;
+    }
+
+    .logo-info {
+      font-family: var(--secondary-font);
+      font-weight: 100;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+
+      & > span {
+        font-family: var(--secondary-font);
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 16px;
+        letter-spacing: 0.2em;
+        display: block;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+//  Clients Slider
+.clients-slider {
+  padding-bottom: 30px;
+
+  .section-title {
+    font-size: 54px;
+    color: var(--primary-color);
+  }
+}
+
+// Testimonial Slider
+.testimonial {
+
+  &-content {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
+
+  &-button {
+    display: inline-block;
+    margin-bottom: 1.6rem;
+    padding: 0.6rem 3rem .9rem;
+    border: 2px solid var(--primary-color) !important;
+    color: var(--primary-color);
+    cursor: pointer;
+    background: transparent;
+    font-size: $fs-xl;
+    line-height: 1;
+    transition: .25s;
+
+    &:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+  }
+
+  &-slider-container &-hooper .hooper-navigation {
+    bottom: 0px !important;
+  }
+
+  &-hooper.testimonials.hooper {
+    padding-bottom: 80px;
+    height: auto;
+  }
+
+  &-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: .25s;
+    z-index: -9;
+
+    &.visible {      
+      opacity: 1;
+      z-index: 99999999999999;
+    }
+
+    &-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba($color: #000000, $alpha: .95);
+    }
+
+    &-close {
+      color: white;
+      position: absolute;
+      right: 30px;
+      top: 30px;
+      font-size: 3rem;
+      cursor: pointer;
+      line-height: 0;
+    }
+
+    &-data {
+      position: absolute;
+      width: 95%;
+      max-width: 600px;
+      max-height: 85%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 1.4rem;
+      overflow-y: auto;
+    }
+  }
+}
+
+// Profile Card
+.profile-layout-1.allow-formating {
+  ul, ol {
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  ul {
+    list-style: initial;
+  }
+
+  blockquote {
+    margin-bottom: 1.5rem;
+    padding: 1.7rem 2rem 1.7rem 2.5rem;
+    background: #f7f7f7;
+    border-left: 5px solid var(--primary-color);
+  }
+} 
+
+@import'./responsive';
+
+
+#calenderlycontainer .section-title { color: var(--primary-color); }
+#text-testimonials .testimonial-content { line-height: 130%; }
+
+#ClientsSlider { padding-bottom: 90px; }
+#ClientsSlider .client-container { align-items: center; column-gap: 99px; row-gap: 40px; }
+#ClientsSlider .client { width: 210px; margin: 0; height: auto; }

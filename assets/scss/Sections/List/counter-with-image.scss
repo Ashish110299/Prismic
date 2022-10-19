@@ -1,0 +1,35 @@
+@import '~/assets/scss/sass-loader';
+
+.box {
+  height: 100%;
+  background: #fff;
+  text-align: center;
+  padding: 30px 0;
+  box-shadow: 0 0 21px -8px #ccc;
+
+  &-image {
+    @include d-flex-center();
+    min-height: 200px;
+    max-width: 80%;
+    margin: auto;
+    margin-bottom: 10px;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &-subtitle {
+    font-size: $fs-lg;
+  }
+
+  &-title {
+    font-size: $fs-jumbo;
+    margin-bottom: 10px;
+  }
+
+  &-description {
+    font-size: $fs-md;
+    margin-bottom: 15px;
+  }
+}

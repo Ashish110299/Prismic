@@ -1,0 +1,35 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Split",
+          "spans": []
+        }
+      ],
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Magna adipisicing tempor do amet officia qui sunt laboris. Quis ipsum consequat fugiat commodo est do ullamco enim mollit ad quis excepteur id cillum aliqua. Incididunt dolor nostrud qui occaecat ad ea ut mollit ipsum laboris cillum esse.",
+          "spans": []
+        }
+      ],
+      "heroImg": {
+        "dimensions": {
+          "width": 900,
+          "height": 500
+        },
+        "alt": null,
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+      }
+    },
+    "slice_type": "heropanel"
+  }
+]

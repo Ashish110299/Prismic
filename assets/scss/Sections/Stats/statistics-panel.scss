@@ -1,0 +1,96 @@
+@import '~/assets/scss/sass-loader';
+
+.statsPanel {
+  $el: '.statsPanel';
+  text-align: center;
+  
+  &__container {
+    @include grid-columns(4, 1fr, start, start, 50px);
+  }
+
+  &__section {
+    margin-bottom: 35px;
+
+    &__title {
+      font-size: 50px;
+      font-weight: 600;
+      text-align: center;
+      color: var(--primary-color);
+    }
+  }
+
+  &__icon {
+    width: auto;
+    height: auto;
+
+    &__container {
+      @include d-flex(row, center, center);
+      border-radius: 100%;
+      background: #fff;
+      width: 130px;
+      height: 130px;
+      margin: 0 auto;
+      margin-bottom: 20px;
+      padding: 1rem;
+    }
+  }
+
+  &__content {
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 180px 0 120px;
+  }
+
+  &__details {
+    color: var(--primary-color);
+  }
+
+  &__title {
+    font-size: $fs-xl;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  &__number {
+    font-size: 57px;
+    line-height: 57px;
+    font-weight: 600;
+  }
+
+  @include tablet {
+    &__container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media(max-width: $screen-sm) {  
+    &__section__title {
+      font-size: $fs-xxxl;
+    }
+
+    &__container {
+      grid-template-columns: 1fr;
+    }
+
+    &__content {
+      background-position: 25%;
+      padding: 130px 0 80px;
+    }
+
+    &__icon {   
+      width: 90px;
+      height: 90px;  
+
+      &__container {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 10px;
+      }
+    }
+
+    &__number {
+      font-size: $fs-xxxl + 10px;
+    }
+  }
+}

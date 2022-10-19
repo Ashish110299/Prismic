@@ -1,0 +1,62 @@
+@import '~/assets/scss/sass-loader';
+
+.card {
+  $el: &;
+  padding: 120px 0;
+
+  &__title {
+    color: #414141;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-family: var(--secondary-font);
+  }
+
+  &__description {
+    color: #818181;
+    font-size: 18px;
+    line-height: 160%;
+    margin-bottom: 30px;
+    font-family: var(--primary-font);
+
+    p:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    h1, h2, h3, h4, h5, h6, strong {
+      color: #414141;
+    }
+  }
+
+  &__button {
+    min-width: 130px;
+    text-align: center;
+    font-family: var(--primary-font);
+    @include button(transparent, black, 8px 24px 10px, 2px solid, 20px );
+
+    &s {
+      display: inline-flex;
+      gap: 20px;
+    }
+  }
+
+  &s--horizontal {
+    #{$el}__content:not(.full) {
+      @include grid-columns(1, 200px 1fr, center, start, 70px);
+
+      @include mobile {
+        gap: 20px;
+        grid-template-columns: 1fr;
+      }
+    }    
+  }
+
+  @include tablet {
+    padding: 80px 20px;    
+  }
+
+  @include mobile {
+    text-align: center;
+    padding: 60px 20px;
+  }
+}

@@ -1,0 +1,123 @@
+@import '~/assets/scss/sass-loader';
+
+.content-bock{
+  $el: '.content-bock';
+  margin-bottom: 1rem;
+
+  &__image {
+    margin-bottom: 10px;
+    // width: 100%;
+
+    &__caption {
+      display: block;
+      font-size: $fs-sm;
+      text-align: left;
+      margin-top: 1px;
+    }
+  }
+
+  .image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  &__title {
+    color: var(--primary-color);
+    font-weight: 600;
+
+    &__container {
+      margin-bottom: .5rem;
+
+      &--under {
+        @include d-flex(column-reverse);
+      }
+    }
+  }
+
+  .content {
+    p {
+      margin-bottom: 15px;
+      font-size: $fs-lg;
+    }
+  }
+
+  &.layout-1,
+  &.layout-2{
+    #{$el}__image {
+      display: none;
+    }
+  }
+
+  &.layout-2 {
+    .content {
+      column-count: 2;
+
+      @include allMobile {
+       column-count: 1 
+      }
+    }
+  }
+
+  &.layout-3,
+  &.layout-4 {
+    @include d-flex(row, flex-start, space-between);
+    gap: 20px;
+
+    #{$el}__image, .section-content {
+      width: calc(50% - 20px);
+    }
+  }
+
+  &.layout-4{
+    flex-direction: row-reverse;
+  }
+
+  &.layout-5, &.layout-6 {
+    #{$el}__image {
+      width: auto;
+      height: auto;
+      max-width: 250px;
+    }
+  }
+
+  &.layout-5 {
+    #{$el}__image {
+      float: left;
+      margin-right: 15px;
+    }
+  }
+
+  &.layout-6 {
+    #{$el}__image {
+      float: right;
+      margin-left: 15px;
+    }
+  }
+
+  &.layout-7,
+  &.layout-8{
+    column-count: 2;
+
+    @include allMobile {
+      column-count: 1
+    }
+  }
+
+  &.layout-10,
+  &.layout-12{
+    @include d-flex(column-reverse);
+  }
+  
+  &.layout-11,
+  &.layout-12{
+    .section-content {
+      margin-top: 10px;
+      column-count: 2;
+      
+      @include allMobile {
+       column-count: 1; 
+      }
+    }
+  }
+}

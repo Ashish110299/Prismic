@@ -1,0 +1,7 @@
+@import '~/assets/scss/Sections/Header/index.scss';
+
+.header-container {
+  .menu-container {
+    @include d-flex(row, center, space-between);
+  }
+}

@@ -1,0 +1,17 @@
+@import '~/assets/scss/sass-loader.scss';
+
+.footer__layout-5 {
+  background: var(--footerBG);
+  color: var(--footerTextColor);
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+
+  &__container {
+    max-width: $container;
+    margin: 0 auto;    
+
+    @include allMobile {
+      padding: 0 1rem;
+    }
+  }
+}

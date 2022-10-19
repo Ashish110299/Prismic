@@ -1,0 +1,18 @@
+@import '~/assets/scss/sass-loader.scss';
+
+.iframe {
+  display: flex;
+  flex-direction: column;
+  
+  &__frame {
+    overflow: hidden;
+    
+    &-container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+  }
+}

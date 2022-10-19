@@ -1,0 +1,28 @@
+@import '~/assets/scss/sass-loader';
+
+.formEl {
+  $el: '.formEl';
+
+  &__title {
+    font-size: $fs-xxxl;
+    color: var(--primary-color);
+    font-weight: 400;
+    
+    &__container {
+      @include d-flex(row, center);
+      margin-bottom: 20px;
+    }
+
+    &__icon {
+      width: 65px;
+      height: 65px;
+      margin-right: 10px;
+    }
+  }
+
+  &__desc {
+    font-size: $fs-lg;
+    color: var(--secondary-color);
+  }
+
+}

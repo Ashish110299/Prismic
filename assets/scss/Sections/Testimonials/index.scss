@@ -1,0 +1,34 @@
+@import '~/assets/scss/sass-loader.scss';
+
+.testimonial-section {
+	&.box-shaddow {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, .4);
+  }
+
+  &.bg-image {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: unset;
+    background-position: 0 bottom;
+  
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+	.section-container { 
+		z-index: 9;
+		
+		.testimonial-slider-container .testimonial {
+			.testimonial-content {
+				max-width: 80%;
+				margin: auto;
+				margin-bottom: 32px;
+			}
+		}
+	}
+}

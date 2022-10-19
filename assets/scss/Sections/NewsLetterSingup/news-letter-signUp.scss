@@ -1,0 +1,75 @@
+@import '~/assets/scss/sass-loader'; 
+.NL_signUp {
+  overflow: hidden;
+  background-color: #f8f8f8;
+  padding: 2rem;
+
+  &__form {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 3rem;
+
+    &__label {
+      font-size: $fs-md;
+      font-weight: 600;
+    }
+
+    input {
+      height: 3rem;
+      width: 100%;
+      padding: 0 1rem;
+      border-radius: .5rem;
+      border: 1px solid #ccc;
+      font-weight: 600;
+      font-size: $fs-md;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &__submit {
+      align-self: flex-end;
+      border-radius: 1.5rem !important;
+      color: #fff;
+      font-size: $fs-xl;
+      font-weight: 600;
+      border: none;
+      background: #68398e;
+    }
+
+    @include smallDesktop {
+      grid-template-columns: repeat(2,1fr);
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    @include mobileLandscape {
+      grid-template-columns: repeat(2,1fr);
+      gap: 1rem;
+      padding: 1rem;
+
+      &__submit {
+        grid-column: 1 / span 2;
+      }
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(1,1fr);
+      gap: 1rem;
+      padding: 1rem;
+
+      &__submit {
+        grid-column: 1fr;
+      }
+    }
+  }
+
+  @include mobile {
+    padding: 1rem;
+  }
+
+  @include mobileLandscape {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,85 @@
+@import '~/assets/scss/sass-loader';
+
+.widget-container {
+	background: var(--bg-color);
+	
+	.container {
+    padding-top: 90px;
+		padding-bottom: 90px;
+		
+		.logo-section {
+			img.primary-logo {
+				max-width: 220px;
+			}
+
+			img.secondary-logo {
+				max-width: 120px;
+			}
+
+      img.logo {
+        max-width: var(--max-width);
+      }
+
+      .logo-info {
+        color: var(--text-color);
+        font-size: 14px;
+        margin: 8px 0;
+      }
+		}
+    
+    .widget-heading {
+      @include font-family(var(--secondary-font), 600, 18px, var(--text-color), 20px);
+      margin-bottom: 8px;
+    }
+
+    .menu {
+      a {
+        position: relative;
+        @include font-family(var(--secondary-font), 400, 14px, var(--text-color), 20px);
+        padding: 0 2px;
+        transition: 0.4s;
+        
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 0;
+          height: 1px;
+          background-color: var(--hover-color);
+          transition: 0.4s;
+        }
+        
+        &:hover {
+          color: var(--hover-color);
+
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    } 
+    
+		.contact-us-section {
+      @include font-family(var(--secondary-font), 400, 14px, var(--text-color), 20px);
+    }
+    
+		.working-info-section {
+      @include font-family(var(--secondary-font), 400, 14px, var(--text-color), 20px);
+    }
+    
+    .social-media {
+      margin-top: 10px;
+
+      a {
+        margin-right: 20px;
+        font-size: 18px;
+        transition: 0.5s;
+
+        &:hover {
+          color: var(--hover-color);
+        }
+      }
+    }
+  }
+}

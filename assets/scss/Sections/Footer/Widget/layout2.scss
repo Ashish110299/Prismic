@@ -1,0 +1,17 @@
+@import '~/assets/scss/Sections/Footer/Widget/index';
+
+.layout-2-container {
+	.container {
+		.logo-section {
+			text-align: center;
+
+			.logo-info {
+				white-space: pre-line;
+				line-height: 1.5;
+				margin-top: 32px;
+				font-family: 'Montserrat';
+				font-size: 18px;
+			}
+		}
+	}
+}

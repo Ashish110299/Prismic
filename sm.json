@@ -1,0 +1,8 @@
+{
+  "apiEndpoint": "https://practice3299.prismic.io/api/v2",
+  "libraries": [
+    "@/slices"
+  ],
+  "_latest": "0.5.1",
+  "framework": "previousNuxt"
+}

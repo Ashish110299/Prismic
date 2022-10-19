@@ -1,0 +1,53 @@
+@import '~/assets/scss/sass-loader';
+
+.service {
+  padding: 12rem 5rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  width: 55%;
+  text-align: center;
+
+  &-container {
+    display: grid;
+
+    .service:nth-child(2n) {
+      justify-self: end;
+    }
+  }
+
+  &:not(:first-child) {
+    margin-top: -100px;
+  }
+
+  .subtitle, .title {
+    font-family: 'Lulo Clean';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 120%;
+  }
+  
+  .subtitle {
+    margin-bottom: 1rem;
+  }
+
+  .title {
+    margin-bottom: 2rem;
+  }
+
+  .transparent-white-button {
+    font-family: 'Lulo Clean';
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 140%;
+    
+    &:hover {
+      color: var(--bg-color);
+      border-color: var(--bg-color) !important;
+
+      &::after {
+        background: #fff;
+      }
+    }
+  }
+}

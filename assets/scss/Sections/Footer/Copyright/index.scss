@@ -1,0 +1,46 @@
+@import '~/assets/scss/sass-loader';
+
+.copyright-container {
+	background: var(--bg-color);
+	
+	.copyright-content {
+    @include d-flex(row, center, space-between);
+		padding-top: 16px;
+		padding-bottom: 16px;
+
+		&.text-center {
+			justify-content: center;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		.text {
+      @include font-family(var(--secondary-font), 600, 16px, var(--text-color), 20px);
+			
+			&.bar::after {
+				content: " | ";
+				color: var(--text-color)
+			}
+		}
+		
+		ul.menus {
+			@include d-flex();
+      list-style: none;
+
+      li {
+				margin-right: 10px;
+
+				&:first-child {
+					margin-left: 10px;
+				}
+				
+        &:not(:last-child)::after {
+					content: " | ";
+					color: var(--text-color)
+        }
+      } 
+    }
+	}
+}

@@ -1,0 +1,47 @@
+@import '~/assets/scss/sass-loader';
+
+	.box-layout-container {
+		.section-container {
+			.bg-box {
+				@include d-flex(row-reverse, center);
+				background-color: white;
+				padding: 80px;
+				box-shadow: 0 10px 30px 2px rgba(0,0,0,.11);
+
+				&.right {
+					flex-direction: row;
+				}
+
+				.content-container {
+					margin-left: 20px;
+					margin-right: 20px;
+
+					.repeater-list-container {
+						@include d-flex(row, center, space-between);
+						width: 80%;
+						margin-top: 30px;
+
+						.repeater-list-item {
+							@include d-flex-center(column);
+							text-align: center !important;
+						}
+					}
+				}
+
+				.image-container {
+					@include d-flex-center();
+					height: 100%;
+					width: 100%;
+					
+					.image-box {
+						@include d-flex-center();
+						text-align: center;
+						width: 350px;
+						height: 350px;
+						border-radius: 4px;
+						box-shadow: 0 10px 30px 2px rgba(0,0,0,.11);
+					}
+				}
+			}
+		}
+	}
